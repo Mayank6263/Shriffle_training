@@ -563,12 +563,75 @@ hen.wokeup
 
 # =>              SELF
 #                   IN METHOD :- refers to main instance
+
+# def nam
+#   puts self
+# end
+# nam
+
+#  its running herarichy wise ie class level scope then method level scope
+
+
+
+
+
 =begin
-def nam
-  puts self
+class User
+  def initialize(a)
+    @name = a
+  end
+
+  def same
+    puts "#{@name} #{@data} in the User class"
+  end
 end
-nam
+
+class Product < User
+  def initialize(a)
+    @name = a
+  end
+
+  def test
+    puts "#{self} in the A class"
+  end
+end
+
+class Animal < User
+  def initialize(a)
+    @name = a
+  end
+
+  def test
+    @data = "data"
+    same
+    puts "#{self} in the A class"
+  end
+end
+
+# a = Animal.new('Dog')
+# a.same
+# b = Animal.new('Cat')
+# b.same
+
+Animal.new('aa').test
+Product.new('Watch').same
+User.new('John').same
 =end
+
+
+# =>    self refers to method name according to class or instance method 
+# class A
+#   def test
+#     self.change
+#   end
+
+#   def self.change
+#     puts self.class
+#   end
+# end
+
+# a = A.new
+# a.test
 
 
 #                In ClASS :- refers to class itself
@@ -682,3 +745,83 @@ arr= [1,2,3,4,5]
 # prc.(1,2)
 # prc[1,2]
 # prc.call(1,2)
+
+
+# =>          Meta Programming
+# meta programming is concept of writing code which writes their own code when needed
+
+#    using method fle
+
+
+#    using class making own method
+# class A
+#   def self.add_method(par,&block)
+#     define_method(par,&block)
+#   end
+# end
+# a = A.new
+# a.class.add_method(:greet) do
+#    puts "new added method"
+#  end
+#  a.greet
+
+
+#  class A
+#   # @@c = "akakj"
+#   @d = 44
+#   def initialize(a, b)
+#     @a = a
+#     @b = b
+#   end
+
+#   def aa
+#     puts @a, @b ,@d
+#   end
+
+#   def self.add_method
+#     puts @d
+#   end
+# end
+
+# a = A.new(1,2)
+# a.aa
+# # # a.greet
+# A.add_method
+
+
+# even if in initialization the class and instance variable cannot be accessed outside instance methods or in the class level scope
+# class variable can be accessed inside accross the class and even if instance methods.
+# instance variable can not accessed by class method even if its defined at class level scope
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class A
+#   def instance_method
+#     puts "this is instance_method"
+#   end
+
+#   def self.class_method
+#     puts "this is class method"
+#   end
+# end
+
+# A.class_method
+
+# cannot perform eachother's task 
+# class method cant be called by instance i.e A.new.class_method will show undefined variable.
+# and instance method cnt be called by classname i.e A.instance_method wrong number of arguments
+
