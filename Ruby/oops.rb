@@ -695,24 +695,86 @@ end
 
 
 # =>                  MULTI-Threading
+# =>   main thread containing a childthred
 =begin
 childthread = Thread.new do 
   3.times do |i|
   puts "child #{i} thread started "
-  sleep(1)
+  # sleep(1)
   puts "child #{i} thread ended"
 end
 end
+=end
 
-puts "started main thread"
-puts "waiting"
-childthread
-puts "the end"
+# puts "started main thread"
+# puts "waiting"
+# childthread.join
+# puts "the end"
+
+
+
+#                   Thread using array
+=begin
+thread = []
+
+3.times do |i|
+  thread << Thread.new do 
+    puts "thread iteration #{i} is started "
+    sleep(1)
+    puts "thread iteration #{i} finished"
+  end
+end
+
+puts "main thread"
+thread.each {|x| x.join }
+puts "back to main thread to say execution of thread finished"
 =end
 
 
 
+def m1
+  i=0
+  while i<=3
+    puts "m1 #{i}"
+    sleep(1)
+    i += 1
+  end
+  puts "m1 thread completed"
+end
 
+def m2
+  i=0
+  while i<=3
+    puts "m2 #{i}"
+    sleep(1)
+    i += 1
+  end
+  puts "m2 thread completed"
+end
+
+
+t1 = Thread.new{m1}
+puts "back to main thread to run m2"
+t2 = Thread.new{m2}
+
+t1.join
+t2.join
+
+
+# => Running two threads
+=begin
+(Thread.new do
+  puts "thread 1 started"
+  sleep(1)
+  puts "thread 1 ended"
+end).join
+
+(Thread.new do
+  puts "thread 2 started"
+  sleep(1)
+  puts "thread 2 ended"
+end).join
+=end
 
 
 # =>                BLOCKS:- block is not an object
@@ -722,6 +784,18 @@ arr= [1,2,3,4,5]
 # puts  x if x%2==0
 # end
 
+=begin
+def dis
+  puts 'lenovo'
+end
+
+def shw
+  yield
+  yield
+  yield
+end
+shw &method(:dis)
+=end
 
 # =>                    PROCS:- procs is an object
 
@@ -824,4 +898,10 @@ arr= [1,2,3,4,5]
 # cannot perform eachother's task 
 # class method cant be called by instance i.e A.new.class_method will show undefined variable.
 # and instance method cnt be called by classname i.e A.instance_method wrong number of arguments
+
+
+
+
+
+
 
