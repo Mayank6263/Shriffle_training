@@ -50,10 +50,22 @@ arr = []
 # arr = [1,2,3,4,5,6]
 # n = arr.each_slice(2)
 
-# => 			MAP AND COLLECT
-# a = arr.map{|x| x if x%2==0 }
-# returns value [nil, 2, nil, 4, nil, 6]
 
-# => 			SELECT AND FILTER
+# arr = [1,2,3,4,5,6]
+#  [1, 2, 3, 4, 5, 6] 
+# arr
+#  [1, 2, 3, 4, 5, 6] 
+
+# => 			MAP/COLLECT
+# a = arr.map{|x| x if x%2==0 }
+#  [nil, 2, nil, 4, nil, 6] 
+# a
+#  [nil, 2, nil, 4, nil, 6] 
+
+# => 			SELECT/FILTER
 # a = arr.select{|x| x if x%2==0 }
-# returns value [2, 4, 6]
+#  [2, 4, 6] 
+# a = arr.filter{|x| x if x%2==0 }
+# [2, 4, 6] 
+
+
