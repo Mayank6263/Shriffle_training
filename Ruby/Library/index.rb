@@ -54,42 +54,12 @@
 $users = []
 # $data = [$users]
 $books = [{:title=>"innovation",:author=>"innovator"},{:title=>"discipline",:author=>"discipline"},]
-$book_allot = [{}]
+$book_allot = []
 
 class User
-    def self.student_task
-      puts "Logged in as Student 
-        1. Show all Books 
-        2. Enrol book
-        3. Deposit book
-        4. Log Out"
-        b = gets.chomp.to_i
-        if b == 1
-          puts $books
-        elsif b == 2
-          Book.collect_books("title")
-        end
-      end
-
-      def self.enroll_task
-        puts "Select Book to enroll
-              1. Enroll
-              2. Deposit
-              3. Logged"
-              i = gets.chomp.to_i
-              if i == 1
-                print "enter title:-"
-                title = gets.chomp
-                Book.collect_books(title)
-                puts $book_allot
-              elsif i == 2
-                puts "deposit task"
-              end
-      end
-  def self.menu
-    create_demo_user_data
-  # # authorizing user
-  puts "Welcome to Library
+  def self.welcome
+    # # authorizing user
+    puts "Welcome to Library
     1.Sign up as a Student?
     2.Sign up as a Librarian?
     3.Login as a Libraian?
@@ -98,32 +68,36 @@ class User
     "
     i = gets.chomp.to_i
     puts "you entered #{i}"
-    #New Student
-    if (i==1)
-      puts "You are a new student"
-      print "please enter email :- "
-        # Authenticating user
-      e = gets.chomp
-      print "please enter password :- "
-      pass = gets.chomp
-      puts e,pass
-      s = Student.new(e,pass)
-      s.save
-      User.student_task
-      User.enroll_task
+  end
 
-    #New Librarian
-    elsif i==2
-      puts "You are a new librarian"
-      print "please enter email :- "
-        # Authenticating user
-      e = gets.chomp
-      print "please enter password :- "
-      pass = gets.chomp
-      puts e,pass
-      l = Librarian.new(e,pass)
-      l.save
-      puts "Logged in as Librarian 
+  def self.student_task
+    puts "Logged in as Student 
+    1. Show all Books 
+    2. Enrol book
+    3. Deposit book
+    4. Log Out"
+    b = gets.chomp.to_i
+    if b == 1
+      puts $books
+    elsif b == 2
+      Book.collect_books("title")
+    end
+  end
+
+  def self.new_student
+    puts "You are a new student"
+    print "please enter email :- "
+    # Authenticating user
+    e = gets.chomp
+    print "please enter password :- "
+    pass = gets.chomp
+    puts e,pass
+    s = Student.new(e,pass)
+    s.save
+  end
+
+  def self.librarian_task
+    puts "Logged in as Librarian 
         1. Create book
         2. Delete book
         3. Show books
@@ -144,69 +118,83 @@ class User
       else
         return "you entered exit"
       end
+  end
 
-
-      #Existing librarian
-    elsif i==3
-      puts "existing librarian"
-       # Authenticating user
-      print "mail :- "
-      e = gets.chomp
-      print "password :- "
-      pass = gets.chomp
-       user = $users.find {|x| x[:email] == e && x[:password] == pass && x[:type] == "Librarian"}
-        
-        puts "no match found please enter correct pass and email" if !user
-        # exit
-        puts "Logged in as Librarian 
-        1. Create book
-        2. Delete book
-        3. Show books
-        4. Log out"
-        b = gets.chomp.to_i
-        if b == 1
-          puts "you entered #{b}"
-          print "Book Title :- "
-          title = gets.chomp
-          print "Book Author :- "
-          author = gets.chomp
-          Book.create_book(title,author)
-          p $books
-        elsif b == 2
-          puts "You entered #{b}"
-        elsif b == 3
-          puts Book.all_books
-        else
-          return "you entered exit"
-        end
-     
-    
-    
-
-
-      #Existing student
-    elsif i==4
-      puts "existing student"
+  def self.new_librarian
+    puts "You are a new librarian"
+    print "please enter email :- "
       # Authenticating user
-      print "mail :- "
-      e = gets.chomp
-      print "password :- "
-      pass = gets.chomp
-       user = $users.find {|x| x[:email] == e && x[:password] == pass && x[:type] == "Student"}
-        puts "no match found please enter correct pass and email" if !user
-        # exit
-        puts "Logged in as Student 
-        1. Show all Books 
-        2. Enrol book
-        3. Deposit book
-        4. Log Out"
-        b = gets.chomp.to_i
-        if b == 1
-          puts $books
-        elsif b == 2
-          Book.collect_books("title")
-        end
+    e = gets.chomp
+    print "please enter password :- "
+    pass = gets.chomp
+    puts e,pass
+    l = Librarian.new(e,pass)
+    l.save
+  end
 
+  def self.enroll_task
+    puts "Select Book to enroll
+    1. Enroll
+    2. Deposit
+    3. Logged"
+    i = gets.chomp.to_i
+    if i == 1
+      print "enter title:-"
+      title = gets.chomp
+      Book.collect_books(title)
+      puts $book_allot
+    elsif i == 2
+      puts "deposit task"
+    end
+  end
+
+  def self.existing_librarian
+    puts "existing librarian"
+    # Authenticating user
+    print "mail :- "
+    e = gets.chomp
+    print "password :- "
+    pass = gets.chomp
+    user = $users.find {|x| x[:email] == e && x[:password] == pass && x[:type] == "Librarian"}    
+    puts "no match found please enter correct pass and email" if !user
+    # exit
+  end
+
+  def self.existing_student
+    puts "existing student"
+    # Authenticating user
+    print "mail :- "
+    e = gets.chomp
+    print "password :- "
+    pass = gets.chomp
+    user = $users.find {|x| x[:email] == e && x[:password] == pass && x[:type] == "Student"}
+    puts "no match found please enter correct pass and email" if !user
+    # exit
+  end
+
+  def self.main
+    create_demo_user_data
+    User.welcome
+    #New Student
+    if (i==1)
+      User.new_student
+      User.student_task
+      User.enroll_task
+
+    #New Librarian
+    elsif i==2
+      User.new_librarian
+      User.Librarian_task
+
+
+    #Existing librarian
+    elsif i==3
+      User.existing_librarian
+      User.Librarian_task     
+    #Existing student
+    elsif i==4
+      self.existing_student
+      self.student_task
     else
       puts "please enter correct digit"
       exit
@@ -243,9 +231,9 @@ class Book
 
   def self.collect_books(title)
    a = $books.find {|x| x[:title]== title} 
-    $book_allot << a
+   $book_allot << a
    $books.delete(a)
-    puts "alloted books are #{$book_allot} and created books are #{$books}"
+   puts "alloted books are #{$book_allot} and created books are #{$books}"
   end
    
   # create_book("biography","apj kalam")
@@ -276,7 +264,7 @@ end
 
 
 
-User.menu
-p $users
-puts "Exit from terminal"
+User.main
+# p $users
+# puts "Exit from terminal"
 
