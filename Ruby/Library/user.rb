@@ -1,55 +1,53 @@
 require_relative "book"
-# require_relative "student-librarian"
+require_relative 'student'
+require_relative 'librarian'
 
 class User
-  def self.welcome
-    # # authorizing user
-    puts "Welcome to Library
-    1.Sign up as a Student?
-    2.Sign up as a Librarian?
-    3.Login as a Librarian?
-    4.Login as a Student?
-    5.Exit?"
-    
-  end
-
-  def self.student_initial_task
-    puts "Logged in as Student
-    1. All Books.
-    2. Search Book.
-    2. My Books.
-    3. Log Out.
-    4. Exit."
-    b = gets.chomp.to_i
-    if b == 1
-      puts "You entered Show Books"
-      Book.all_books
-      User.student_task
-    elsif b == 2
-      puts "You entered My Books"
-      Book.enrolled_books
-      User.student_task
-    elsif b == 3
-      puts "You entered Log-Out"
-      User.main
+  def self.student_search
+    puts "You are Searching book"
+    puts "which method would you prefer
+    1. Title.
+    2. Author.
+    3. Back."
+    way = gets.chomp.gsub(/\D/, '').to_i
+    if way == 1
+      puts "title way"
+      Book.search_book_title
+      Student.menu
+    elsif way == 2
+      puts "Author way"
+      Book.search_book_author
+      Student.menu
     else
-      puts "You entered Exit"
-      exit
+      puts "back"
+      Student.menu
     end
   end
 
-  def self.new_student
-    print "please enter email :- "
-    # Authenticating user
-    e = gets.chomp
-    print "please enter password :- "
-    pass = gets.chomp
-    puts e,pass
-    s = Student.new(e,pass)
-    s.save
+  def self.librarian_search
+    puts "search book"
+    puts "You are Searching book"
+    puts "which method would you prefer
+    1. Title.
+    2. Author.
+    3. Back."
+    way = gets.chomp.gsub(/\D/, '').to_i
+    if way == 1
+      puts "title way"
+      Book.search_book_title
+      User.librarian_initialprompt_task
+    elsif way == 2
+      puts "Author way"
+      Book.search_book_author
+      User.librarian_initialprompt_task
+
+    else
+      puts "back"
+      User.librarian_initialprompt_task
+    end
   end
 
-  def self.createbook_user
+  def self.create_book_user
     print "Book Title :- "
     title = gets.chomp
     print "Book Author :- "
@@ -61,115 +59,168 @@ class User
     User.librarian_initialprompt_task if (b)
   end
 
+  def self.update_book_prompt
+    puts "which method would you prefer
+    1. Title.
+    2. Author.
+    3. Both(Title & Author).
+    4. Back."
+    way = gets.chomp.to_i
+    if way == 1
+      puts "Search By title"
+      puts "Old title :- "
+      inp = gets.chomp
+      exist_title = $books.find{|x| x[:title] == inp}
+      # print "please enter new title to update book"
+      # title = gets.chomp.to_i
+      if exist_title
+        print "New Title :- "
+        title = gets.chomp
+        exist_title[:title] = title
+      elsif
+        puts "No any title present"
+      end
+    elsif way == 2
+      puts "Search by Author"
+      print "Old Author :- "
+      inp = gets.chomp
+      exist_author = $books.find{|x| x[:author] == inp}
+      # print "please enter new title to update book"
+      # title = gets.chomp.to_i
+      if exist_author
+        print "New Author :- "
+        author = gets.chomp
+        exist_author[:author] = author
+      else
+        puts "no any book present by that title or author"
+      end
+    elsif way == 3
+      puts "Search By any of them"
+      puts "Old title and Author :- "
+      inp = gets.chomp
+      exist_book = $books.find{|x| x[:title] == inp || x[:author] == inp}
+
+      if exist_book
+        print "New title :- "
+        title = gets.chomp
+        exist_book[:title] = title
+        print "New Author :- "
+        author = gets.chomp
+        exist_book[:author] = author
+      else
+        puts "no any book present by that title or author"
+      end
+    elsif way ==4
+      User.librarian_initialprompt_task
+    else 
+      puts "enter digits between 1-4"
+    end
+  end
+
   def self.deletebook_user
-    puts "Total books in library are #{$books}"
-    print "Book Title :- "
-    title = gets.chomp
-    Book.delete_book(title)
-    # puts "remaining books in library are #{$books}"
-    puts "press Enter key to continue"
-    b  = gets.chomp
-    User.librarian_initialprompt_task if (b)
+    # puts "Total books in library are #{$books}"
+    puts "which method would you prefer
+    1. Title.
+    2. Author.
+    3. Back."
+    way = gets.chomp.gsub(/\D/,"").to_i
+    if way == 1
+      puts "Search By title"
+      puts "title :- "
+      inp = gets.chomp
+      exist_title = $books.find{|x| x[:title] == inp}
+      puts exist_title
+      if exist_title
+        $books.delete(exist_title)
+        puts "press any key to continue"
+        b  = gets.chomp
+        User.librarian_initialprompt_task if (b)
+      elsif
+        puts "No any title present"
+      end
+    elsif way == 2
+      puts "Search by Author"
+      print "Search Author :- "
+      inp = gets.chomp
+      exist_author = $books.find{|x| x[:author] == inp}
+      puts exist_author
+      if exist_author
+        $books.delete(exist_author)
+        puts "press any key to continue"
+        b  = gets.chomp
+        User.librarian_initialprompt_task if (b)
+      else
+        puts "no any author present"
+        User.librarian_initialprompt_task
+      end
+    elsif way ==3
+      User.librarian_initialprompt_task
+    end
   end
 
   def self.librarian_initialprompt_task
     puts "Logged in as Librarian 
-        1. Create Book.
-        2. Search Book.
-        3. All books.
-        4. Update book.
-        5. Delete Book.
-        6. Log-Out.
-        7. Exit."
-      b = gets.chomp.to_i
-      if b == 1
-        puts "you entered Create book"
-        User.createbook_user
-      elsif b == 2
-        puts "search book"
-        Book.search_book
-        User.librarian_initialprompt_task
-      elsif b == 3
-        puts "you entered Show books"
-        Book.all_books
-        User.librarian_task
-      elsif b == 4
-        puts "update books"
-      elsif b == 5
-        puts "you entered Delete book"
-        User.deletebook_user
-      elsif b == 6
-        puts "you entered Log-Out"
-        User.main
-      else
-        return "you entered exit"
-        exit
-      end
-  end
+    1. Create Book.
+    2. Search Book.
+    3. All books.
+    4. Update book.
+    5. Delete Book.
+    6. Log-Out.
+    7. Exit."
 
-  def self.librarian_task
-    puts "Select Task to Perform as Librarian:-
-        1. Create Book.
-        2. Delete Book.
-        3. Back.
-        4. Log-Out.
-        5. Exit."
-        b = gets.chomp.to_i
-        if b == 1
-          puts "you entered Create book"
-          User.createbook_user
-        elsif b == 2
-          puts "you entered Delete book"
-          User.deletebook_user
-        elsif b == 3
-          puts "you entered Back"
-          User.librarian_initialprompt_task
-        elsif b == 4
-          puts "you entered Log-Out"
-          User.main 
-        else
-          return "you entered exit"
-          exit
-        end
-
-  end
-
-  def self.new_librarian
-    print "please enter email :- "
-      # Authenticating user
-    e = gets.chomp
-    print "please enter password :- "
-    pass = gets.chomp
-    puts e,pass
-    l = Librarian.new(e,pass)
-    l.save
-  end
-
-  def self.student_task
-    puts "Select any task
-    1. Enroll.
-    2. Deposit.
-    3. Back.
-    4. Log-Out.
-    5. Exit."
-    i = gets.chomp.to_i
-    if i == 1
-      Book.enroll_book
-    elsif i == 2
-      Book.deposit_book
-    elsif i == 3
-      User.student_initial_task
-    elsif i == 4
+    b = gets.chomp.gsub(/\D/, '').to_i
+    if b == 1
+      puts "you entered Create book"
+      User.create_book_user
+    elsif b == 2
+      User.librarian_search
+      User.librarian_initialprompt_task
+    elsif b == 3
+      puts "you entered Show books"
+      Book.all_books
+      User.librarian_initialprompt_task
+    elsif b == 4
+      User.update_book_prompt
+      User.librarian_initialprompt_task
+    elsif b == 5
+      puts "you entered Delete book"
+      User.deletebook_user
+    elsif b == 6
+      puts "you entered Log-Out"
       User.main
     else
-      puts "you entered #{i}. See you soon"
+      return "you entered exit"
       exit
     end
   end
 
-  
+  def self.librarian_task
+    puts "Select Task to Perform as Librarian:-
+    1. Create Book.
+    2. Delete Book.
+    3. Back.
+    4. Log-Out.
+    5. Exit."
+    b = gets.chomp.gsub(/\D/, '').to_i
+    if b == 1
+      puts "you entered Create book"
+      User.create_book_user
+    elsif b == 2
+      puts "you entered Delete book"
+      User.deletebook_user
+    elsif b == 3
+      puts "you entered Back"
+      User.librarian_initialprompt_task
+    elsif b == 4
+      puts "you entered Log-Out"
+      User.main 
+    else
+      return "you entered exit"
+      exit
+    end
+  end
 
-  def self.existing_librarian
+    def self.existing_librarian
     # Authenticating user
     print "mail :- "
     e = gets.chomp
@@ -198,62 +249,50 @@ class User
 
   def self.main
     create_demo_user_data
-    User.welcome
-    i = gets.chomp.to_i
-    puts "you entered #{i}"
-    #New Student
-    if (i==1)
-      User.new_student
-      User.student_initial_task
+    value = welcome
 
-    #New Librarian
-    elsif i==2
-      User.new_librarian
+    case value
+    when 1 # New Student
+      Student.create
+      Student.menu
+    when 2 # New Librarian
+      Librarian.new_librarian
       User.librarian_initialprompt_task
-
-
-    #Existing librarian
-    elsif i==3
+    when 3 # Existing librarian
       User.existing_librarian
       User.librarian_initialprompt_task
-    #Existing student
-    elsif i==4
+    when 4 # Existing student
       User.existing_student
-      User.student_initial_task
+      Student.menu
     else
       puts "please enter correct digit"
       User.main
     end
   end
-  
+
   def save
     $users << {email: @email, password: @password, type: @type}
   end
 
-
   private
-  def self.create_demo_user_data
+
+  def welcome
+    # User Authorization
+    puts "Welcome to Library
+    1.Sign up as a Student?
+    2.Sign up as a Librarian?
+    3.Login as a Librarian?
+    4.Login as a Student?
+    5.Exit?"
+
+    input = gets.chomp.gsub(/\D/, '').to_i
+    puts "You entered #{input}"
+    input
+  end
+
+  def create_demo_user_data
     Student.new('mayank','password').save
     Student.new('test_student','test_password').save
     Librarian.new('test_librarian','test_password').save
   end
-end
-
-
-class Student< User
-  def initialize(email, password)
-    @email = email
-    @password = password
-    @type = 'Student'
-  end
-
-end
-
-class Librarian < User
-  def initialize(email, password)
-    @email = email
-    @password = password
-    @type = 'Librarian'
-  end
-
 end

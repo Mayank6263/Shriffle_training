@@ -50,11 +50,11 @@
 
 
 
-require_relative "user.rb"
+require_relative 'user'
 
 $users = []
 # $data = [$users]
-$books = [{:title=>"innovation",:author=>"innovator"},{:title=>"discipline",:author=>"discipline"},]
+$books = [{:id=> 1, :title=>"innovation",:author=>"innovator"},{:id=> 2, :title=>"discipline",:author=>"discipline"},]
 $book_allot = [{:title=>"demo",:author=>"demo"}]
 
 
