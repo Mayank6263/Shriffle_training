@@ -1,91 +1,98 @@
 class Book
-  def self.delete_book(title)
-    $books.delete($books.find {|x| x[:title]== title} )
-  end
-
   def self.create_book(title,author)
     @title = title
     @author = author
     $books << {title: @title, author: @author}
   end
 
-  # def self.all_books_for_librarian
-  #   puts "------------------------------------------"
-  #   puts "     ====== #{$books.count} Available Books ======\n"
-  #   puts "------------------------------------------"
-  #   puts "Sn. Title                             Author\n"
-  #   puts "------------------------------------------"
-  #   $books.each_with_index { |book, index| puts "#{index+1}- #{book[:title]}                        #{book[:author]}" }
-  #   puts "------------------------------------------"
-  # end
-
   def self.all_books
-    puts "------------------------------------------"
-    puts "     ====== #{$books.count} Available Books ======\n"
-    puts "------------------------------------------"
+    puts ""
+    puts " Available Books = #{$books.count} ".center(100,"=")
+    puts "".center(100,'-')
     puts "Sn. Title                             Author\n"
-    puts "------------------------------------------"
-    $books.each_with_index { |book, index| puts "#{index+1}- #{book[:title]}                        #{book[:author]}" }
-    puts "------------------------------------------"
+    puts "".center(100,'_')
+    $books.each_with_index { |book, index| puts "#{index+1}- #{book[:title].center(50)}                        #{book[:author]}" }
+    puts ""
   end
 
   def self.enrolled_books
-    puts "------------------------------------------"
-    puts "     ====== #{$book_allot.count} Alloted Books ======\n"
-    puts "------------------------------------------"
+    puts ""
+    puts "#{$book_allot.count} Enrolled Books".center(100,"=")
+    puts "".center(100,'-')
     puts "Sn. Title                             Author\n"
-    puts "------------------------------------------"
+    puts "".center(100,'_')
     $book_allot.each_with_index { |book, index| puts "#{index+1}- #{book[:title]}                        #{book[:author]}" }
-    puts "------------------------------------------"
+    puts ""
   end
   
-  def self.search_book
-    search = gets.chomp
-    book = $books.find {|x| x[:title] == search}
-    puts "Book you are looking for is "
-    puts book.each {|k,v| puts "key => #{k} & value => #{v}"}
+  def self.search_book_title
+    3.times do |x|
+      print "Title :- "
+      search = gets.chomp
+      book = $books.find {|x| x[:title] == search}
+      if book.nil?
+        puts "Book not found"
+      else
+        puts "Book you are looking for is "
+
+        book.each {|k,v| puts "#{k}  => #{v}"}
+        break
+      end
+    end
   end
 
-  def self.update_book
-    title = gets.chomp
-
+  def self.search_book_author
+    3.times do |x|
+      print "Author :- "
+      search = gets.chomp
+      book = $books.find {|x| x[:author] == search}
+      if book.nil?
+        puts "Book not found"
+      else
+        puts "Book you are looking for is "
+        book.each {|k,v| puts "#{k}  => #{v}"}
+        break
+      end
+    end
   end
 
   def self.enroll_book
-    print "Enter book title to enroll :-"
-    title = gets.chomp
-    book = $books.find {|x| x[:title]== title}
-
-    if book.nil?
-      puts "Item not found please enter correct title"
-      self.enroll_book
+    3.times do |x|
+      print "Enter book title to enroll :- "
+      title = gets.chomp
+      book = $books.find {|x| x[:title]== title}
+       
+      if book.nil?
+        puts "Item not found please enter correct title"
+      else
+        $book_allot << book
+        $books.delete(book)
+        enrolled_books
+        break        
+      end
     end
-
-    $book_allot << book
-    $books.delete(book)
-
-    puts "Press Enter key to continue" 
+    puts "Press Enter key to go Home".center(100,'-')
     b = gets.chomp
-    User.student_initial_task if b
+    Student.menu if b
  end
 
- def self.deposit_book
-  print "Enter book title to deposit :-"
-    title = gets.chomp
-    book = $book_allot.find {|x| x[:title]== title}
+  def self.deposit_book
+    3.times do |x|
+      print "Enter book title to deposit :- "
+      title = gets.chomp
+      book = $book_allot.find {|x| x[:title]== title}
 
-    if book.nil?
-      puts "Item not fount please enter correct title"
-      self.deposit_book
-    end
-  $books << book
-  $book_allot.delete(book)
-  puts "Press Enter key to continue" 
-  b = gets.chomp
-  User.student_initial_task if b
-  end 
-
-  # create_book("biography","apj kalam")
-  #   create_book("gravity","Newton")
-  #   create_book("e = mc^2","Einstein")
+      if book.nil?
+        puts "Item not fount please enter correct title"
+      else
+        $books << book
+        $book_allot.delete(book)
+        all_books
+        break
+      end
+    end 
+      puts "Press Enter key to continue".center(100,'-')
+      b = gets.chomp
+      Student.menu if b
+  end
 end
