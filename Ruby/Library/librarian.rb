@@ -13,11 +13,14 @@ class Librarian < User
     puts "Sign-Up as Librarian".center(100,'-')
     print "Mail :- "
     # Authenticating user
-    e = gets.chomp
+    email = gets.chomp
     print "Password :- "
-    pass = gets.chomp
-    puts e,pass
-    librarian = Librarian.new(e,pass)
+    password = gets.chomp
+    if email.empty? || password.empty?
+      puts "Credentials Can't be empty, Re-Enter email and password"
+      create
+    end
+    librarian = Librarian.new(email,password)
     librarian.save
   end
 
@@ -25,18 +28,22 @@ class Librarian < User
     puts "Sign-In as Librarian".center(100,"-")
     # Authenticating user
     print "Mail :- "
-    e = gets.chomp
+    email = gets.chomp
     print "Password :- "
-    pass = gets.chomp
-    if e.empty? || pass.empty?
-      puts "Credentials Can't be empty"
-      User.new.main
+    password = gets.chomp
+    user = $users.find {|x| x[:email] == email && x[:password] == password && x[:type] == "Librarian"}    
+    if user.nil?
+      puts "Invalid Credentials. Re-Enter Credentials please"
+      existing_librarian
+    elsif user[:email] != email && user[:password] != password
+      puts "Invalid Credentials".center(100,'-')
+    else      
+      menu
     end
-    $users.find {|x| x[:email] == e && x[:password] == pass && x[:type] == "Librarian"}    
   end
 
   def self.menu
-    puts "Logged in as Librarian 
+    puts "Logged in as Librarian
     1. Create Book.
     2. Search Book.
     3. All books.

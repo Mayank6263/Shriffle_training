@@ -15,18 +15,7 @@ class User
       Librarian.create
       Librarian.menu
     when 3 # Existing librarian
-      3.times do |x|
-        x = Librarian.existing_librarian
-        puts x
-        if x.nil?
-          puts "Invalid Mail and Password".upcase.center(100,"-")
-          puts ""
-          # existing_librarian
-        else
-          Librarian.menu
-          break
-        end
-      end
+      Librarian.existing_librarian
       User.new.main
     when 4 # Existing student
       3.times do |x|
@@ -61,8 +50,8 @@ class User
     puts "
       1.Sign up as a Student?
       2.Sign up as a Librarian?
-      3.Login as a Librarian?
-      4.Login as a Student?
+      3.Log  In as a Librarian?
+      4.Log  In as a Student?
       5.Exit?"
 
     input = gets.chomp.gsub(/\D/, '').to_i

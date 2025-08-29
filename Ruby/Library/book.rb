@@ -9,9 +9,9 @@ class Book
     puts ""
     puts " Available Books = #{$books.count} ".center(100,"=")
     puts "".center(100,'-')
-    puts "Sn. Title                             Author\n"
+    puts "Sn."+"Title".center(30) + "Author\n"
     puts "".center(100,'_')
-    $books.each_with_index { |book, index| puts "#{index+1}- #{book[:title].center(50)}                        #{book[:author]}" }
+    $books.each_with_index { |book, index| puts "#{index+1}- #{book[:title].center(30)} #{book[:author]}" }
     puts ""
   end
 
@@ -19,9 +19,9 @@ class Book
     puts ""
     puts "#{$book_allot.count} Enrolled Books".center(100,"=")
     puts "".center(100,'-')
-    puts "Sn. Title                             Author\n"
+    puts "Sn." + "Title".center(30) + "Author\n"
     puts "".center(100,'_')
-    $book_allot.each_with_index { |book, index| puts "#{index+1}- #{book[:title]}                        #{book[:author]}" }
+    $book_allot.each_with_index { |book, index| puts "#{index+1}- #{book[:title].center(30)} #{book[:author]}" }
     puts ""
   end
   
