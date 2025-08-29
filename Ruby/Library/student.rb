@@ -15,7 +15,10 @@ class Student < User
     email = gets.chomp
     print 'Password :- '
     password = gets.chomp
-    puts email, password
+    if email.empty? || password.empty?
+      puts "Credentials Can't be empty, Re-Enter email and password"
+      create
+    end
     student = Student.new(email, password)
     student.save
   end
@@ -24,16 +27,20 @@ class Student < User
     puts "<= Sign-In as Student =>".center(70,'-')
     # Authenticating user
     print "Mail :- "
-    e = gets.chomp
+    email = gets.chomp
     print "Password :- "
-    pass = gets.chomp
-    if e.empty? || pass.empty?
-      puts "Credentials Can't be empty"
-      User.new.main
+    password = gets.chomp
+    user = $users.find {|x| x[:email] == email && x[:password] == password && x[:type] == "Student"}
+    if user.nil?
+      puts "Invalid Credentials. Re-Enter Credentials please"
+      existing_student
+    elsif user[:email] != email && user[:password] != password
+      puts "Invalid Credentials".center(100,'-')
+    else      
+      menu
     end
-    user = $users.find {|x| x[:email] == e && x[:password] == pass && x[:type] == "Student"}
-    # exit
   end
+
   def self.menu
     puts "<= Logged in as Student =>".center(100,"-")
     puts "
