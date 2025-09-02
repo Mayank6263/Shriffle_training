@@ -1,18 +1,66 @@
 Rails.application.routes.draw do
-  root "users#index"
-  get "users/create"
-  get "users/update"
-  get "users/destroy"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: "users#index"
+  # resources :users #, [:create, :update, :destroy]
+  # get "users/create"
+  # get "users/update"
+  # get "users/destroy"
+  # get "posts/index"
+  # resources :posts, only: :index
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # resources :users do
+  #   collection do
+  #     get 'search'
+  #   end
+  # end
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  # get 'search' on: :collection
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # resources :products do
+  #   member do
+  #     get 'show'
+  #   end
+  # end
+# =>  creates 14 routes
+  # resources :users do
+  #   resources :products#, shallow: true , only: [:index, :new, :create]
+  # end
+
+
+
+                        #Namespace
+# =>  will change the prefix with controller action i.e show_users_product
+# =>  used to change url path, prefix and controller action
+  # namespace :users do
+  #   resources :products
+  # end
+
+
+                      #Scope
+# => will not change the prefix as well as controller action column i.e new_product
+# =>  basically used to change url path  
+  # scope 'api' do
+  #   resources :products
+  # end
+
+# => to change structure of controller#action use module: with scope
+  # scope module: 'users' do
+  #   resources :products
+  # end
+
+# => to change structure of url use path: with scope
+  # scope path: 'users' do
+  #   resources :products
+  # end
+
+# => to change structure of prefix use as: with scope
+  # scope as: 'users' do
+  #   resources :products
+  # end
+
+                      #Concerns
+  concern :commentable do
+    resources :comments
+  end
+
+
 end
