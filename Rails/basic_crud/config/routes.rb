@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  # root to: "users#index"
+  root "products#index"
+  resources :products
+
+
+
+
+
   # resources :users #, [:create, :update, :destroy]
   # get "users/create"
   # get "users/update"
@@ -58,9 +65,9 @@ Rails.application.routes.draw do
   # end
 
                       #Concerns
-  concern :commentable do
-    resources :comments
-  end
+  # concern :commentable do
+  #   resources :comments
+  # end
 
 
 end
