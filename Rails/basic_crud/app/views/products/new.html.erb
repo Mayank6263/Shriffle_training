@@ -2,7 +2,6 @@
 <%= form_with model: @product do |form| %>
   <%= form.text_field :name, placeholder: "title" %><br>
   <%= form.text_field :price, placeholder: "price" %><br>
-  <%= form.text_field :quantity, placeholder: "quantity" %><br>
   <%= form.submit "Create",class:"submit-btn" %>
 <% end %>
 <button><%= link_to "Back", root_path,{:style =>"text-decoration:none"} %></button>

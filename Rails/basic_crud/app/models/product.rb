@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
-	validates :name,:price,:quantity, presence: true
+	belongs_to :user
+	validates :name, :price, presence: true
 	before_create :wel
 	private
 	def wel
-		puts "Welocome Our New User"
+		puts "Welcome Our New User"
 	end
 end

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	has_many :products
 	validates :username, format: {with:/\A[a-zA-Z]+\z/,message:"only contain letters"} 
 	validates :password, :age, presence:true
 	# validates :password, confirmation: true #options:- {case_sensitivity: true}
