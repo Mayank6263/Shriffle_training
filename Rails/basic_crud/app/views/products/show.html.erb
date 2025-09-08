@@ -5,7 +5,6 @@
 <ul>
 	<li><%= @product.id %></li>
 	<li><%= @product.name %></li>
-	<li><%= @product.quantity %></li>
 	<li><%= @product.price %></li>
 	<%= link_to "Edit", edit_product_path, class:'update-btn'%>
 	<%= link_to 'Remove', product_path, class:'delete-btn', data: {"turbo_method": :delete, "turbo_confirm": 'Are you sure?' } %> 
