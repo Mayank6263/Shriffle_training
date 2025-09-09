@@ -1,5 +1,5 @@
 # require_relative "book"
-# require_relative "require"
+# require_relative "loader"
 # require_relative 'user'
 
 class User
@@ -9,28 +9,26 @@ class User
 
     case value
     when 1 # New Student
-      Student.create
-      Student.menu
+      sign_up
     when 2 # New Librarian
-      Librarian.create
-      Librarian.menu
-    when 3 # Existing librarian
-      Librarian.existing_librarian
-      User.new.main
-    when 4 # Existing student
-      3.times do |x|
-        x = Student.existing_student
-        if x.nil?
-          puts "Invalid Mail and Password\n".center(100,"-").upcase
-          # existing_student
-        else
-          Student.menu
-          break
-        end
-      end
-      User.new.main
-      # Student.menu
-    when 5
+      sign_in
+    # when 3 # Existing librarian
+    #   Librarian.existing_librarian
+    #   User.new.main
+    # when 4 # Existing student
+    #   3.times do |x|
+    #     x = Student.existing_student
+    #     if x.nil?
+    #       puts "Invalid Mail and Password\n".center(100,"-").upcase
+    #       # existing_student
+    #     else
+    #       Student.menu
+    #       break
+    #     end
+    #   end
+    #   User.new.main
+    #   # Student.menu
+    when 3
       puts "You entered Exit See you soon"
       exit
     else
@@ -43,15 +41,47 @@ class User
     $users << {email: @email, password: @password, type: @type}
   end
 
+  def sign_in
+    print "Enter Mail :- "
+    email = gets.chomp
+    print "Enter Password :- "
+    password = gets.chomp
+    user = $users.find {|x| x[:email] == email && x[:password] == password}
+    if user.nil?
+      puts "Invalid Credentials"
+      sign_in
+    else
+      Student.menu
+    end
+  end
+
+  def sign_up
+    print "Enter Mail :- "
+    email = gets.chomp
+    print "Enter Password :- "
+    password = gets.chomp
+    print "Student/Librarian ? :- "
+    type = gets.chomp
+
+    if type == "Student"
+      Student.new(email,password).save
+      Student.menu
+    elsif type == "Librarian"
+      Librarian.new(email,password).save
+      Librarian.menu
+    else
+      puts "Select between Student and Librarian Only."
+      sign_up
+    end
+  end
+
   protected
   def welcome
     # User Authorization
     puts "Welcome to Library".center(100,'-')
     puts "
-      1.Sign up as a Student?
-      2.Sign up as a Librarian?
-      3.Log  In as a Librarian?
-      4.Log  In as a Student?
+      1.Sign up
+      2.Sign In
       5.Exit?"
 
     input = gets.chomp.gsub(/\D/, '').to_i
