@@ -1,4 +1,4 @@
-# require_relative "require"
+# require_relative "loader"
 require_relative "book"
 require_relative "user"
 
@@ -10,35 +10,35 @@ class Student < User
   end
 
   def self.create
-    puts "<= Sign-Up as Student =>".center(100,"-")
-    print 'Email :- '
-    email = gets.chomp
-    print 'Password :- '
-    password = gets.chomp
-    if email.empty? || password.empty?
-      puts "Credentials Can't be empty, Re-Enter email and password"
-      create
-    end
-    student = Student.new(email, password)
-    student.save
+    # puts "<= Sign-Up as Student =>".center(100,"-")
+    # print 'Email :- '
+    # email = gets.chomp
+    # print 'Password :- '
+    # password = gets.chomp
+    # if email.empty? || password.empty?
+    #   puts "Credentials Can't be empty, Re-Enter email and password"
+    #   create
+    # end
+    # student = Student.new(email, password)
+    # student.save
   end
 
   def self.existing_student
-    puts "<= Sign-In as Student =>".center(70,'-')
-    # Authenticating user
-    print "Mail :- "
-    email = gets.chomp
-    print "Password :- "
-    password = gets.chomp
-    user = $users.find {|x| x[:email] == email && x[:password] == password && x[:type] == "Student"}
-    if user.nil?
-      puts "Invalid Credentials. Re-Enter Credentials please"
-      existing_student
-    elsif user[:email] != email && user[:password] != password
-      puts "Invalid Credentials".center(100,'-')
-    else      
-      menu
-    end
+    # puts "<= Sign-In as Student =>".center(70,'-')
+    # # Authenticating user
+    # print "Mail :- "
+    # email = gets.chomp
+    # print "Password :- "
+    # password = gets.chomp
+    # user = $users.find {|x| x[:email] == email && x[:password] == password && x[:type] == "Student"}
+    # if user.nil?
+    #   puts "Invalid Credentials. Re-Enter Credentials please"
+    #   existing_student
+    # elsif user[:email] != email && user[:password] != password
+    #   puts "Invalid Credentials".center(100,'-')
+    # else      
+    #   menu
+    # end
   end
 
   def self.menu
