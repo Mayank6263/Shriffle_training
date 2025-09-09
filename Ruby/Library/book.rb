@@ -28,7 +28,7 @@ class Book
     puts ""
   end
   
-  def search_book
+  def self.search_book
     puts "<= Searching =>".center(100,'-')
     puts "which method would you prefer
     1. Title.
@@ -38,19 +38,22 @@ class Book
     way = gets.chomp.gsub(/\D/, '').to_i
     if way == 1
       puts "<= Title Method =>".center(100,'-')
-      search_book_title
+      self.search_by_title
       puts "Press Enter key to continue" 
       b = gets.chomp
       Librarian.menu if b
     elsif way == 2
       puts "<= Author Method =>".center(100,'-')
-      search_book_author
-      Librarian.menu
+      self.search_by_author
+      puts "Press Enter key to continue" 
+      b = gets.chomp
+      Librarian.menu if b
     elsif way == 3
-      puts "Search By any of them"
-      puts "Old title and Author :- "
-      inp = gets.chomp
-      exist_book = $books.find{|x| x[:title] == inp || x[:author] == inp}
+      puts "Search By any of them".center(100,'-')
+      self.search_by_title_author
+      puts "Press Enter key to continue" 
+      b = gets.chomp
+      Librarian.menu if b
     else
       puts "back"
       Librarian.menu
@@ -58,7 +61,23 @@ class Book
   end
 
 
-  def search_book_title
+  def self.search_by_title
+    3.times do |x|
+      print "Title :- "
+      search = gets.chomp
+      book = $books.find {|x| x[:title] == search || x[:author] == search}
+      if book.nil?
+        puts "Book not found"
+      else
+        puts "Book you are looking for is "
+
+        book.each {|k,v| puts "#{k}  => #{v}"}
+        break
+      end
+    end
+  end
+
+  def self.search_by_title_author
     3.times do |x|
       print "Title :- "
       search = gets.chomp
@@ -74,7 +93,7 @@ class Book
     end
   end
 
-  def search_book_author
+  def self.search_by_author
     3.times do |x|
       print "Author :- "
       search = gets.chomp
