@@ -36,6 +36,12 @@ class Post < ApplicationRecord
 	# IIIrd Way
 	# before_validation -> {p "i am callback"}
 
+	after_initialize do |x|
+		Rails.logger.info("You have initialize record.")
+	end
 
+	after_find do |x|
+		Rails.logger.info("You found the record which you are searching #{x}")
+	end
 	
 end
