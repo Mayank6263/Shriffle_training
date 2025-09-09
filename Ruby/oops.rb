@@ -337,6 +337,28 @@ a.s
 =end
 
 
+# =>      Operator Overloading 
+=begin
+class A
+  attr_accessor :vol
+  def initialize(vol)
+    @vol = vol
+  end
+
+  def +(other)
+    A.new(self.vol + other.vol)
+  end
+
+  def to_s
+   "box with vol #{vol}"
+  end
+end
+
+a = A.new(10)
+b = A.new(13)
+
+puts a+b
+=end
 
 
 
