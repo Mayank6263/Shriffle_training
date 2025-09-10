@@ -102,12 +102,12 @@ class Librarian < User
   end
 
   def self.update_book_prompt
-    puts "which method would you prefer
-    1. Title.
-    2. Author.
-    3. Both(Title & Author).
-    4. Back."
-    way = gets.chomp.to_i
+    # puts "which method would you prefer
+    # 1. Title.
+    # 2. Author.
+    # 3. Both(Title & Author).
+    # 4. Back."
+    # way = gets.chomp.to_i
     if way == 1
       puts "<= Title Method =>".center(100,'-')
       puts "Old title :- "
@@ -156,7 +156,7 @@ class Librarian < User
         puts "No Book Found by that title or author"
       end
     elsif way ==4
-      User.menu
+      Librarian.menu
     else 
       puts "Invalid Digits:- Enter digits between 1-4"
     end
