@@ -82,7 +82,7 @@ class User
     puts "
       1.Sign up
       2.Sign In
-      5.Exit?"
+      3.Exit?"
 
     input = gets.chomp.gsub(/\D/, '').to_i
     # puts "You entered #{input}"
