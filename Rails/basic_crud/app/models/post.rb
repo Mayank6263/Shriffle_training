@@ -5,7 +5,8 @@ class Post < ApplicationRecord
 	validates_presence_of :p1, presence: true
 	validates :p1, uniqueness: true
 	#validates :p1 , presence: { strict:true}
-	# validates :p1, inclusion: { in: %w(rails no ruby), message: "Please add any rails,no,ruby %{value} "}
+	# validates :p1, inclusion: { in: %w[rails no ruby], message: "Please add any rails, no, ruby %{value} "}
+	validates :p1, exclusion: { in: %w[rails no ruby], message: "Please remove these words rails, no, ruby %{value} "}
 	
 	# => 		Custom Validations
 	# validate :contain

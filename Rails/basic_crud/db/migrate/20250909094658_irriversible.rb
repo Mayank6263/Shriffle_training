@@ -9,7 +9,7 @@ class Irriversible < ActiveRecord::Migration[8.0]
 
   reversible do |d|
     d.up {execute("INSERT INTO posts(p1, p2, created_at, updated_at) VALUES ('Foo', 'Bar', '2018-07-31', '2018-07-31');")}
-    d.down {execute("INSERT INTO posts(p1, p2, created_at, updated_at) VALUES ('Foo', 'Bar', '2018-07-31', '2018-07-31');")}
+    d.down {execute("Delete FROM posts where p1 = 'Foo' and p2 = 'Bar';")}
   end
 end
 
