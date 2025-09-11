@@ -10619,3 +10619,524 @@ Migrating to Irriversible (20250909094658)
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5212456853830669065) /*application='BasicCrud'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+Started GET "/" for ::1 at 2025-09-11 11:36:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250911052549_add_index_to_user.rb
+
+
+):
+  
+activerecord (8.0.2.1) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2.1) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2.1) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2.1) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2.1) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2.1) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2.1) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.0) lib/rack/method_override.rb:28:in `call'
+rack (3.2.0) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-09-11 11:36:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250911052549_add_index_to_user.rb
+
+
+):
+  
+activerecord (8.0.2.1) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2.1) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2.1) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2.1) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2.1) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2.1) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2.1) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.0) lib/rack/method_override.rb:28:in `call'
+rack (3.2.0) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.0) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddIndexToUser (20250911052549)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE INDEX "index_users_on_age" ON "users" ("age") /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250911052549') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+Migrating to AddIndexToUser (20250911052549)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP INDEX  "index_users_on_age" /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250911052549' /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_json" json /*application='BasicCrud'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_json" jsonb /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_json" json /*application='BasicCrud'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_jsonb" jsonb /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250911075925') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (45.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007bfdad562ff8>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007bfdaef69758>
+You have initialize record.
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'json and' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('json and', 'json b', '2025-09-11 08:11:14.843729', '2025-09-11 08:11:14.843729', '"json me store kiya"', '"jsonb me store kia"') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007bfdad1c8c08>
+You have initialize record.
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007bfdad09a7a0>
+You have initialize record.
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "data_jsonb" /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "data_json" /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250911075925' /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (56.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x0000728530b84188>
+You have initialize record.
+You found the record which you are searching #<Post:0x0000728531bf7948>
+You have initialize record.
+You found the record which you are searching #<Post:0x0000728531bf7808>
+You have initialize record.
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_json" json DEFAULT '{}' /*application='BasicCrud'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_jsonb" jsonb DEFAULT '{}' /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250911075925') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'json and' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007a07a3904c58>
+You have initialize record.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 3 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'json and' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('json and', 'json b', '2025-09-11 08:28:43.836736', '2025-09-11 08:28:43.836736', '"json me store kiya"', '"jsonb me store kia"') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "data_jsonb" /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "data_json" /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250911075925' /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_json" json DEFAULT '"{}"' /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_jsonb" jsonb DEFAULT '"{}"' /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250911075925') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (39.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007b28b8fe7250>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007b28b9fe9608>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007b28b9fe9388>
+You have initialize record.
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 4 LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007b28b9fee748>
+You have initialize record.
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (2.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 4 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'json and' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('json and', 'json b', '2025-09-11 08:41:25.819026', '2025-09-11 08:41:25.819026', '"json me store kiya"', '"jsonb me store kia"') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "data_jsonb" /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "data_json" /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250911075925' /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddJsonandJsonbColumnToPost (20250911075925)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_json" json DEFAULT '{}' /*application='BasicCrud'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "data_jsonb" jsonb DEFAULT '{}' /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250911075925') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+You have initialize record.
+You have initialize record.
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" IS NULL LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'pi' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('pi', NULL, '2025-09-11 08:49:05.018286', '2025-09-11 08:49:05.018286', '{"name":"mayank"}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd543fe0>
+You have initialize record.
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = '0pi' AND "posts"."id" != 6 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Update (1.1ms)[0m  [1m[33mUPDATE "posts" SET "p1" = '0pi', "updated_at" = '2025-09-11 08:49:27.432624', "data_jsonb" = '{"name":"mayank"}' WHERE "posts"."id" = 6 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd3abb88>
+You have initialize record.
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'pi' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('pi', NULL, '2025-09-11 08:50:06.728026', '2025-09-11 08:50:06.728026', '"df"', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd3f4608>
+You have initialize record.
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 OFFSET 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd3a4608>
+You have initialize record.
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 OFFSET 1 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd51d840>
+You have initialize record.
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_json->>'name' = 'mayank') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd3a8208>
+You have initialize record.
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb->>'name' = 'mayank') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x000079a7dd4de618>
+You have initialize record.
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddGinIndexToPosts (20250911095634)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_posts_on_data_jsonb" ON "posts" USING gin ("data_jsonb") /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250911095634') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (65.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007d4379388ee0>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007d437ad69620>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007d437ad694e0>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007d437ad69260>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007d437ad69120>
+You have initialize record.
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb ->> 'name' ='mayank') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007d43806ac958>
+You have initialize record.
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb @> '{"name":"mayank"}') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007d437900a8e0>
+You have initialize record.
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb @> '{"name":"mayankd"}') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb @> '{"name":"mayank"}') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007d4378ec08e0>
+You have initialize record.
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_json @> '{"name":"mayank"}') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb @> '{"name":"mayank"}') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007d4378f899c0>
+You have initialize record.
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (data_jsonb->'name' = 'mayank') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ({"name":"mayank"}) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ({"name":"mayank"}) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'i am' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('i am', 'p2', '2025-09-11 12:18:39.163861', '2025-09-11 12:18:39.163861', '{}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" IS NULL LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" IS NULL LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'i am' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'i am' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'pp' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('pp', 'p2', '2025-09-11 12:21:35.184943', '2025-09-11 12:21:35.184943', '{}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'pp' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('p', 'p2', '2025-09-11 12:22:41.674858', '2025-09-11 12:22:41.674858', '{}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007285e40ccc18>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374bf40>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374be00>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374bcc0>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374bb80>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374ba40>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374b900>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007285e374b7c0>
+You have initialize record.
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007005a7149750>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7149610>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a71494d0>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7149250>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7149110>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7148e90>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7148d50>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7148ad0>
+You have initialize record.
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='BasicCrud'*/[0m
+You found the record which you are searching #<Post:0x00007005a7142e50>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7142d10>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7142bd0>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7142a90>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7142950>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7142810>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a71426d0>
+You have initialize record.
+You found the record which you are searching #<Post:0x00007005a7142590>
+You have initialize record.
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (2.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (1.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 2 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (1.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 5 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (1.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 6 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (2.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 7 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (1.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (1.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 9 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Destroy (2.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 10 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('p', 'p2', '2025-09-11 13:03:18.123474', '2025-09-11 13:03:18.123474', '{}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+You have initialize record.
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('p', 'p2', '2025-09-11 13:03:34.879223', '2025-09-11 13:03:34.879223', '{}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb") VALUES ('p', 'p2', '2025-09-11 13:04:08.696389', '2025-09-11 13:04:08.696389', '{}', '{}') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (38.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."p1" = 'p' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
