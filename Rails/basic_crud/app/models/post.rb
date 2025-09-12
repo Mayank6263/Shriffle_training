@@ -48,7 +48,11 @@ class Post < ApplicationRecord
 	# after_create -> {p ' after_create validation.'}
 	# after_save -> {p ' after_save validation.'}
 	# after_commit -> {p 'after_commit validation.'}
-	after_rollback -> {p ' after_rollback validation.'}
+	after_rollback :roll
+
+	def roll
+		puts "i am rolling back"
+	end
 
 
 
