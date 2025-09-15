@@ -119,15 +119,15 @@ class Post < ApplicationRecord
   # before_validation -> {p 'before_vaidation callback'}
   # after_validation -> {p 'after_validation callback'}
 
-  before_destroy -> {p 'before destroy callback. '}
-  around_destroy do|activity, block|
-    p 'before_around_destroy callback'
-    block.call
-    p 'after_around_destroy callback'
-  end
-  after_destroy -> {p 'after_destroy callback'}
-  after_commit -> {p 'after_commit callback'}
-
+  # before_destroy -> {p 'before destroy callback. '}
+  # around_destroy do|activity, block|
+  #   p 'before_around_destroy callback'
+  #   block.call
+  #   p 'after_around_destroy callback'
+  # end
+  # after_destroy -> {p 'after_destroy callback'}
+  after_commit -> {p 'First callback'}
+  after_commit -> {p 'Second callback'}
 
 
 
