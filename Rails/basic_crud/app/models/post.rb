@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+
+  has_many :products, through :profiles
   # change it to singular
   # validates :p1, presence:{message:"name can't be blank."}
   # =>  Older versions syntax also works fine
@@ -126,8 +128,8 @@ class Post < ApplicationRecord
   #   p 'after_around_destroy callback'
   # end
   # after_destroy -> {p 'after_destroy callback'}
-  after_commit -> {p 'First callback'}
-  after_commit -> {p 'Second callback'}
+  # after_commit -> {p 'First callback'}
+  # after_commit -> {p 'Second callback'}
 
 
 
