@@ -1,6 +1,12 @@
 class Post < ApplicationRecord
+  # has_one :profiles
+  # has_one :products, through: :profiles
+  # has_and_belongs_to_many :users
+  # has_many :profiles
+  # has_many :posts, through: :profiles
+  has_many :profiles, as: :midiator
 
-  has_many :products, through :profiles
+
   # change it to singular
   # validates :p1, presence:{message:"name can't be blank."}
   # =>  Older versions syntax also works fine
