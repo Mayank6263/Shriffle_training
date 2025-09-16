@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_15_120153) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_16_074130) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -24,6 +24,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_15_120153) do
     t.index ["data_jsonb"], name: "index_posts_on_data_jsonb", using: :gin
   end
 
+  create_table "posts_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -33,12 +38,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_15_120153) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "post_id"
+    t.string "midiator_type", null: false
+    t.bigint "midiator_id", null: false
+    t.date "joined"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_profiles_on_post_id"
-    t.index ["user_id"], name: "index_profiles_on_user_id"
+    t.index ["midiator_type", "midiator_id"], name: "index_profiles_on_midiator"
   end
 
   create_table "supressmessages", force: :cascade do |t|
@@ -56,6 +61,4 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_15_120153) do
   end
 
   add_foreign_key "products", "users"
-  add_foreign_key "profiles", "posts"
-  add_foreign_key "profiles", "users"
 end
