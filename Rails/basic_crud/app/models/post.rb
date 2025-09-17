@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   # has_and_belongs_to_many :users
   # has_many :profiles
   # has_many :posts, through: :profiles
-  has_many :profiles, as: :midiator
+  # has_many :profiles, as: :midiator
 
 
   # change it to singular

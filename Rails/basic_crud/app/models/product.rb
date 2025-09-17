@@ -1,5 +1,13 @@
 class Product < ApplicationRecord
-  has_many :profiles, as: :midiator
+  belongs_to :user
+  delegate :nm, to: :user
+  #   def hello
+  #    puts "hello "
+  # end
+  # def bye
+  #   puts "bye"
+  # end
+  # has_many :profiles, as: :midiator
   # has_one :user, through :profiles
   # belongs_to :user
   # has_one :profile
