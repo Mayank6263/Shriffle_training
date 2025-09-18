@@ -1,0 +1,2 @@
+class Cloth < Product
+end
