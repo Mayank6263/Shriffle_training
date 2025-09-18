@@ -12436,3 +12436,250 @@ Migrating to CreateProfiles (20250915120153)
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
   [1m[36mProfile Create (2.0ms)[0m  [1m[32mINSERT INTO "profiles" ("midiator_type", "midiator_id", "joined", "created_at", "updated_at") VALUES ('Post', 36, '2025-09-16', '2025-09-16 12:00:35.343604', '2025-09-16 12:00:35.343604') RETURNING "id" /*application='BasicCrud'*/[0m
   [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (4.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 3 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 OFFSET 3 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 OFFSET 3 /*application='BasicCrud'*/[0m
+  [1m[36mPost Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."active" = TRUE /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* annotate check */ /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 13 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 13 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 13 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts"."p1" AS "updated p1" FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts"."p1" FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "posts"."p1" FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts"."p1" FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (3.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (39.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918081816)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+Migrating to AddUserRefToProducts (20250907174747)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "products" DROP CONSTRAINT "fk_rails_dee2631783" /*application='BasicCrud'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "user_id" /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250907174747' /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918081816)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (38.9ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918081816)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (52.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918092642)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (64.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mProfile Load (3.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" ORDER BY "profiles"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918092642)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918092642)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (62.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918092642)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "users" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddProductRefToUsers (20250918092642)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "products" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (55.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddUserRefToPosts (20250918094330)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddUserRefToPosts (20250918094330)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddUserRefToPosts (20250918094330)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mPost Delete All (1.0ms)[0m  [1m[31mDELETE FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddUserRefToPosts (20250918094330)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint NOT NULL /*application='BasicCrud'*/[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id") /*application='BasicCrud'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "posts" ADD CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250918094330') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (56.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL AND "users"."password" IS NULL LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 5 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" IS NULL /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (username=nil) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (username='nil') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (username = 'nil') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (username = 'nil') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" IS NULL /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Destroy (2.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 2 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Destroy (2.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 3 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Destroy (1.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 4 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 6 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 7 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "age", "created_at", "updated_at") VALUES ('mayank', 'solanki', 33, '2025-09-18 10:32:16.735406', '2025-09-18 10:32:16.735406') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "age", "created_at", "updated_at") VALUES ('mayank rajput', 'M@3', 32, '2025-09-18 10:34:23.843469', '2025-09-18 10:34:23.843469') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = 'mayank' AND "users"."password" = 'solanki' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb", "user_id") VALUES ('product1', 'product2', '2025-09-18 10:41:09.860443', '2025-09-18 10:41:09.860443', '{"type":"json"}', '{"type":"jsonb"}', NULL) RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (2.1ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb", "user_id") VALUES ('product1', 'product2', '2025-09-18 10:41:50.815846', '2025-09-18 10:41:50.815846', '{"type":"json"}', '{"type":"jsonb"}', 8) RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "age", "created_at", "updated_at") VALUES ('Pratik Parmar', 'M@3', 32, '2025-09-18 10:42:43.727118', '2025-09-18 10:42:43.727118') RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (66.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT 5 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 5 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (39.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (id = 3) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (40.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE NOT ((id = 3)) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE NOT ("products"."name" IS NULL AND "products"."price" IS NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE ("products"."name" IS NOT NULL OR "users"."id" = 1) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE ("products"."name" IS NOT NULL OR "users"."id" = 8) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE ("products"."name" IS NOT NULL OR "products"."id" = 8) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" IS NOT NULL AND "products"."id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" IS NULL AND "products"."id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ ORDER BY "posts"."created_at" DESC LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProfile Load (3.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY "products"."created_at" DESC LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."type" = 'Book' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."type" = 'Book' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."type" = 'Book' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mCloth Load (1.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."type" = 'Cloth' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mCloth Load (1.0ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."type" = 'Cloth' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts"."p2" FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "products"."name" FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 3 OFFSET 5 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (41.0ms)[0m  [1m[34mSELECT "products".* FROM "products" GROUP BY "products"."created_at" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m

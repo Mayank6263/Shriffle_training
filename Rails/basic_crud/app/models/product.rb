@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  belongs_to :user
-  delegate :nm, to: :user
+  # belongs_to :user
+  # delegate :nm, to: :user
   #   def hello
   #    puts "hello "
   # end
