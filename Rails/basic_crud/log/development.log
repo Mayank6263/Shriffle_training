@@ -12683,3 +12683,78 @@ FOREIGN KEY ("user_id")
   [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 3 OFFSET 5 /*application='BasicCrud'*/[0m
   [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
   [1m[36mProduct Load (41.0ms)[0m  [1m[34mSELECT "products".* FROM "products" GROUP BY "products"."created_at" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Book' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Book' AND (id = 11) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (id = 11) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL AND price = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Book' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Cloth' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = 'US Polo' AND price = '$300') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name LIKE 'US' U%) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Book' AND (title LIKE 'U%') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Book' AND (name LIKE 'U%') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name LIKE 'U%') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE 'U%') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE 'u%') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name LIKE 'u%') /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (50.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY created_at LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY created_at desc LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY created_at desc, price desc LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (32.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (8, 9, 10) /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (42.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."age" = 33 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."p1" = 'p1' /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."p1" = 'p1' /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."p1" = 'p1' /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = 'mayank' /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = 'mayank' /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[34mSELECT DISTINCT "users"."id" FROM "users" LEFT OUTER JOIN "posts" ON "posts"."user_id" = "users"."id" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."username" AS t0_r1, "users"."password" AS t0_r2, "users"."age" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "posts"."id" AS t1_r0, "posts"."p1" AS t1_r1, "posts"."p2" AS t1_r2, "posts"."created_at" AS t1_r3, "posts"."updated_at" AS t1_r4, "posts"."data_json" AS t1_r5, "posts"."data_jsonb" AS t1_r6, "posts"."user_id" AS t1_r7 FROM "users" LEFT OUTER JOIN "posts" ON "posts"."user_id" = "users"."id" WHERE "users"."id" IN (8, 10, 9) /* loading for pp */ /*application='BasicCrud'*/[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."username" AS t0_r1, "users"."password" AS t0_r2, "users"."age" AS t0_r3, "users"."created_at" AS t0_r4, "users"."updated_at" AS t0_r5, "posts"."id" AS t1_r0, "posts"."p1" AS t1_r1, "posts"."p2" AS t1_r2, "posts"."created_at" AS t1_r3, "posts"."updated_at" AS t1_r4, "posts"."data_json" AS t1_r5, "posts"."data_jsonb" AS t1_r6, "posts"."user_id" AS t1_r7 FROM "users" LEFT OUTER JOIN "posts" ON "posts"."user_id" = "users"."id" /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (35.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users"."username" FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (71.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name=NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IN (NULL)) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IN (NULL)) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" IS NULL /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name => NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IS NULL ?) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IS NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name = NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IS NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE NOT ((name  = NULL)) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IS NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IN (NULL)) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" IS NULL /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name IS NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT name IS ? FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT DISTINCT name IS ? FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT DISTINCT "products".* FROM "products" WHERE (name IS NULL) /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (42.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" GROUP BY name is  /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" GROUP BY name is ? /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", name is ? AS "name_is" FROM "products" GROUP BY name is ? /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" GROUP BY name IS ? /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products" GROUP BY "products"."name" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "products"."name" AS "products_name" FROM "products" GROUP BY "products"."name" /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (35.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 5 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 OFFSET 2 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (39.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 /*application='BasicCrud'*/[0m

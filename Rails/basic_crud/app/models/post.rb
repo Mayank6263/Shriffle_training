@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   # has_many :profiles
   # has_many :posts, through: :profiles
   # has_many :profiles, as: :midiator
-
+  belongs_to :user
 
   # change it to singular
   # validates :p1, presence:{message:"name can't be blank."}
