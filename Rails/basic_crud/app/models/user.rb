@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # has_and_belongs_to_many :posts
-
+  has_many :posts
   
   # attr_accessor :ages
 	#in case of has_one to create an instance we uses create_tablenameInsingular instead of create
