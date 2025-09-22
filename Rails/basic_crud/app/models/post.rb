@@ -6,6 +6,9 @@ class Post < ApplicationRecord
   # has_many :posts, through: :profiles
   # has_many :profiles, as: :midiator
   belongs_to :user
+  # scope :sabhi, -> {all}
+
+  enum :status, { draft: 0,  posted: 1, archived: 2 }
 
   # change it to singular
   # validates :p1, presence:{message:"name can't be blank."}

@@ -12758,3 +12758,126 @@ FOREIGN KEY ("user_id")
   [1m[36mProduct Load (35.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 5 /*application='BasicCrud'*/[0m
   [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 OFFSET 2 /*application='BasicCrud'*/[0m
   [1m[36mProduct Load (39.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (96.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 OFFSET 3 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (40.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (8, 9, 10) /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (48.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (3.8ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb", "user_id") VALUES ('demo para1', 'demo para2', '2025-09-22 06:51:48.494052', '2025-09-22 06:51:48.494052', '{}', '{}', 8) RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "users" ON "users"."id" = "posts"."user_id" WHERE "users"."id" IS NOT NULL /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "posts" ON "posts"."user_id" = "users"."id" WHERE "posts"."id" IS NOT NULL /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (40.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = 'mayank' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 AND "users"."username" = 'mayank' LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = '8' AND "users"."id" = NULL LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = 'mayank' AND "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='BasicCrud'*/[0m
+Migrating to AddStatusToPosts (20250922083831)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE "posts" ADD "status" integer DEFAULT 0 /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250922083831') RETURNING "version" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(17989157960800845) /*application='BasicCrud'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (41.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."status" = 0 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ ORDER BY "posts"."status" ASC LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."id" = 38 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Update (1.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = '2025-09-22 10:02:15.386200', "status" = 2 WHERE "posts"."id" = 38 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb", "user_id", "status") VALUES ('caption', 'image', '2025-09-22 10:04:49.922667', '2025-09-22 10:04:49.922667', '{}', '{}', 8, 1) RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."id" = 40 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."id" = 40 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("p1", "p2", "created_at", "updated_at", "data_json", "data_jsonb", "user_id", "status") VALUES ('caption', 'image', '2025-09-22 10:06:48.378254', '2025-09-22 10:06:48.378254', '{}', '{}', 8, 1) RETURNING "id" /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."status" = 1 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."status" != 1 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for inspect */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."id" = 41 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (36.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Pluck (2.1ms)[0m  [1m[34mSELECT "posts"."status" FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."p1" = 'product1' /*application='BasicCrud'*/[0m
+  [1m[36mPost Pluck (1.0ms)[0m  [1m[34mSELECT "posts"."status" FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mPost Pluck (0.4ms)[0m  [1m[34mSELECT "posts"."status" FROM "posts" WHERE "posts"."user_id" = 8 AND "posts"."p1" = 't' /*application='BasicCrud'*/[0m
+  [1m[36mPost Pluck (0.5ms)[0m  [1m[34mSELECT "posts"."p1", "posts"."p2" FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mPost Pluck (1.0ms)[0m  [1m[34mSELECT "posts"."p1", "posts"."p2" FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mPost Pluck (0.5ms)[0m  [1m[34mSELECT "posts"."p1", "posts"."p2" FROM "posts" WHERE "posts"."user_id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Ids (40.4ms)[0m  [1m[34mSELECT "posts"."id" FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Count (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "users" LIMIT 2) subquery_for_count /*application='BasicCrud'*/[0m
+  [1m[36mUser Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mPost Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mPost Count (0.5ms)[0m  [1m[34mSELECT COUNT("posts"."p1") FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mPost Count (0.5ms)[0m  [1m[34mSELECT COUNT("posts"."data_json") FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mPost Average (1.5ms)[0m  [1m[34mSELECT AVG("posts"."id") FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mUser Average (1.1ms)[0m  [1m[34mSELECT AVG("users"."id") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Book' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mCloth Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = 'Cloth' /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mCloth Average (0.5ms)[0m  [1m[34mSELECT AVG("products"."id") FROM "products" WHERE "products"."type" = 'Cloth' /*application='BasicCrud'*/[0m
+  [1m[36mPost Maximum (1.5ms)[0m  [1m[34mSELECT MAX("posts"."status") FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mPost Maximum (0.7ms)[0m  [1m[34mSELECT MAX("posts"."id") FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mPost Sum (1.3ms)[0m  [1m[34mSELECT SUM("posts"."id") FROM "posts" /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "posts" ON "posts"."user_id" = "users"."id" WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (41.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (40.5ms)[0m  [1m[34mSELECT p1 FROM posts /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "posts" ON "posts"."user_id" = "users"."id" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (40.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (8, 9, 10) /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" IN (8, 9, 10) /*application='BasicCrud'*/[0m
