@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   # has_and_belongs_to_many :posts
   has_many :posts
-  user = User.preload(:posts).where(id:8)#will work but
-  user = User.preload(:posts).where(posts: {id:8})#will work but
+  # user = User.preload(:posts).where(id:8)#will work but
+  # user = User.preload(:posts).where(posts: {id:8})#will work but
 
   # attr_accessor :ages
 	#in case of has_one to create an instance we uses create_tablenameInsingular instead of create
