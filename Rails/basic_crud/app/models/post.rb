@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   # has_many :posts, through: :profiles
   # has_many :profiles, as: :midiator
   belongs_to :user
+  # delegate :m1, to: :user
   # scope :sabhi, -> {all}
   # default_scope {where(p1: "caption")}
   enum :status, { draft: 0,  posted: 1, archived: 2 }

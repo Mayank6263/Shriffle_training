@@ -1,6 +1,22 @@
+# require "byebug"
 class User < ApplicationRecord
   # has_and_belongs_to_many :posts
   has_many :posts
+  alias_attribute :new_age, :age
+  alias_attribute :new_name, :username
+
+  # def m1
+  # 	"me delegate hu"
+  # end
+
+  # attr_accessor :change_age
+  
+  # def change_age(age)
+  # 	byebug
+  # 	update(age: age)
+  # end
+
+
   # user = User.preload(:posts).where(id:8)#will work but
   # user = User.preload(:posts).where(posts: {id:8})#will work but
 
