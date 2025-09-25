@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   # has_many :profiles, as: :midiator
   belongs_to :user
   # scope :sabhi, -> {all}
-  # default_scope {where(p1: nil)}
+  # default_scope {where(p1: "caption")}
   enum :status, { draft: 0,  posted: 1, archived: 2 }
 
   # change it to singular
