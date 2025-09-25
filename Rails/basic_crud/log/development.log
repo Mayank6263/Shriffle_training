@@ -12923,3 +12923,50 @@ Migrating to AddStatusToPosts (20250922083831)
   [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."p1" IS NULL AND "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
   [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (67.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "age" = 88, "updated_at" = '2025-09-25 10:15:43.643094' WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Update (3.4ms)[0m  [1m[33mUPDATE "users" SET "age" = 23, "updated_at" = '2025-09-25 10:20:10.500716' WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "age" = 99, "updated_at" = '2025-09-25 10:25:16.381137' WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='BasicCrud'*/[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "username" = 'Mayank Solanki ', "age" = 65, "updated_at" = '2025-09-25 10:43:45.325873' WHERE "users"."id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 41 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 41 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*application='BasicCrud'*/[0m
+  [1m[36mUser Count (37.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Maximum (0.7ms)[0m  [1m[34mSELECT MAX("users"."id") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Minimum (0.5ms)[0m  [1m[34mSELECT MIN("users"."id") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Average (1.5ms)[0m  [1m[34mSELECT AVG("users"."id") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Average (0.5ms)[0m  [1m[34mSELECT AVG("users"."age") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Average (0.5ms)[0m  [1m[34mSELECT AVG("users"."age") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
+  [1m[36mUser Average (0.4ms)[0m  [1m[34mSELECT AVG("users"."age") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT("users"."age") FROM "users" /*application='BasicCrud'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users"."username" FROM "users" /* loading for pp */ LIMIT 11 /*application='BasicCrud'*/[0m
